@@ -30,6 +30,7 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 |**The program will not allow more than three of the same symbol**| User Input: "4" | Output: "IV" |
 |**The program will separate ones, tens, hundreds, and thousands**| User Input: "99" | Output: "XCIX" |
 |**The program will not count higher than 3999**| User Input: "4000" | Output: "NaN" |
+|**The program will not count lower than 1**| User Input: "0" | Output: "NaN" |
 
 
 ## Known Bugs

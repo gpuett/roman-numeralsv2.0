@@ -1,13 +1,11 @@
 // Business logic
 function romanNumeral(number) {
-  var romanNumeralString;
-  if (number === 1) {
-    romanNumeralString = "I";
-  } else if (number === 2) {
-    romanNumeralString = "II";
-  } else if (number === 3) {
-    romanNumeralString = "III";
-  } else if (number === 5) {
+  var romanNumeralString = "";
+  if (number < 4) {
+    for (var i = 1; i <= number; i++) {
+      romanNumeralString += "I"
+    }
+  }  else if (number === 5) {
     romanNumeralString = "V";
   } else if (number === 10) {
     romanNumeralString = "X";
@@ -18,7 +16,7 @@ function romanNumeral(number) {
   } else if (number === 500) {
     romanNumeralString = "D";
   } else if (number === 1000) {
-    romanNumeralString = "M"; 
+    romanNumeralString = "M";
   }
   return romanNumeralString
 }
