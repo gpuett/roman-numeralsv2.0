@@ -15,7 +15,7 @@ function romanNumeral(number) {
         }
         outputRomanString += romanArray[1 + (2 * i)];
       } else if (elementNumber === 4) {
-        outputRomanString += romanArray[1] + romanArray[0 + (2 * i)]
+        outputRomanString += romanArray[1 + (2 * i)] + romanArray[0 + (2 * i)]
       } else if (elementNumber === 9) {
         outputRomanString += romanArray[2 + (2 * i)] + romanArray[0 + (2 * i)]
       }
