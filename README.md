@@ -26,6 +26,10 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 |**The program will convert 100 to numeral C**| User Input: "100" | Output: "C" |
 |**The program will convert 500 to numeral D**| User Input: "500" | Output: "D" |
 |**The program will convert 1000 to numeral M**| User Input: "1000" | Output: "M" |
+|**The program will add the value of all symbols**| User Input: "66" | Output: "LXVI" |
+|**The program will not allow more than three of the same symbol**| User Input: "4" | Output: "IV" |
+|**The program will separate ones, tens, hundreds, and thousands**| User Input: "99" | Output: "XCIX" |
+|**The program will not count higher than 3999**| User Input: "4000" | Output: "NaN" |
 
 
 ## Known Bugs
