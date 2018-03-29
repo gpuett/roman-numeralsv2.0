@@ -5,7 +5,9 @@ function romanNumeral(number) {
     for (var i = 1; i <= number; i++) {
       romanNumeralString += "I"
     }
-  }  else if (number === 5) {
+  } else if (number === 4) {
+    romanNumeralString = "IV";
+  } else if (number === 5) {
     romanNumeralString = "V";
   } else if (number === 10) {
     romanNumeralString = "X";
