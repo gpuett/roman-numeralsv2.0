@@ -5,7 +5,7 @@ function romanNumeral(number) {
   var outputRomanString = "";
     for (var i = 0; i < userRomanArray.length; i++) {
       var elementNumber = parseInt(userRomanArray[i]);
-      if (elementNumber < 4) {
+        if (elementNumber < 4) {
         for (var j = 0; j < elementNumber; j++) {
           outputRomanString += romanArray[0 + (2 * i)];
         }
@@ -17,7 +17,7 @@ function romanNumeral(number) {
       } else if (elementNumber === 4) {
         outputRomanString += romanArray[1] + romanArray[0 + (2 * i)]
       } else if (elementNumber === 9) {
-        outputRomanString += romanArray[2] + romanArray[0 + (2 * i)]
+        outputRomanString += romanArray[2 + (2 * i)] + romanArray[0 + (2 * i)]
       }
     }
   return outputRomanString.split("").reverse().join("");
