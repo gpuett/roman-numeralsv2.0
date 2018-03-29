@@ -1,7 +1,7 @@
 // Business logic --- Primary Function
 function romanNumeral(number) {
   var romanNumeralString = "";
-  if (number < 10) {
+  if (number > 0 && number < 10) {
     return romanNumeralLessThanTen(number);
   } else if (number < 40) {
     return romanNumeralLessThanForty(number);
@@ -9,12 +9,17 @@ function romanNumeral(number) {
     return romanNumeralLessThanFiftyOne(number);
   } else if (number <= 90) {
     return romanNumeralLessThanNinetyOne(number);
+  } else if (number <= 100) {
+    return romanNumeralLessThanOneHundredAndOne(number);
+  } else if (number <= 400) {
+    return romanNumeralLessThanFourHundredAndOne(number);
   }
   return romanNumeralString
 }
 
 // Less than 10 Function
 function romanNumeralLessThanTen(number) {
+  var romanNumeralString = "";
   if (number < 4) {
     for (var i = 1; i <= number; i++) {
       romanNumeralString += "I"
@@ -55,7 +60,7 @@ function romanNumeralLessThanForty(number) {
 }
 
 function romanNumeralLessThanFiftyOne(number) {
-  romanNumeralString = "XL";
+  var romanNumeralString = "XL";
   if (number === 40) {
     romanNumeralString;
   } else if (number > 40 && number < 50) {
@@ -67,7 +72,7 @@ function romanNumeralLessThanFiftyOne(number) {
 }
 
 function romanNumeralLessThanNinetyOne(number) {
-  romanNumeralString = "L"
+  var romanNumeralString = "L";
   if (number < 60) {
     romanNumeralString += romanNumeralLessThanTen(number-50)
   } else if (number > 60 && number < 90) {
@@ -78,16 +83,45 @@ function romanNumeralLessThanNinetyOne(number) {
   return romanNumeralString;
 }
 
-  // } else if (number === 100) {
-  //   romanNumeralString = "C";
-  // } else if (number === 500) {
-  //   romanNumeralString = "D";
-  // } else if (number === 1000) {
-  //   romanNumeralString = "M";
-  // }
+function romanNumeralLessThanOneHundredAndOne(number) {
+  var romanNumeralString = "XC";
+  if (number > 90 && number < 100) {
+    romanNumeralString += romanNumeralLessThanTen(number-90)
+  } else if (number === 100) {
+    romanNumeralString = "C";
+  }
+  return romanNumeralString;
+}
 
-
-
+function romanNumeralLessThanFourHundredAndOne(number) {
+    var romanNumeralString = "C";
+    if (number > 100 && number < 110) {
+      romanNumeralString += romanNumeralLessThanTen(number-100)
+    } else if (number > 110 & number < 140) {
+      romanNumeralString += romanNumeralLessThanForty(number-100)
+    } else if (number >= 140 && number < 151) {
+      romanNumeralString += romanNumeralLessThanFiftyOne(number-100)
+    } else if (number >= 151 & number < 191) {
+      romanNumeralString += romanNumeralLessThanNinetyOne(number-100)
+    } else if (number >= 191 & number < 200) {
+      romanNumeralString += romanNumeralLessThanOneHundredAndOne(number-100)
+    } else if (number === 200) {
+      romanNumeralString += "C";
+    } else if (number > 200 && number < 210) {
+      romanNumeralString = "C" + romanNumeralString + romanNumeralLessThanTen(number-200)
+    } else if (number > 210 & number < 240) {
+      romanNumeralString = "C" + romanNumeralString + romanNumeralLessThanForty(number-200)
+    } else if (number >= 240 && number < 251) {
+      romanNumeralString = "C" + romanNumeralString + romanNumeralLessThanFiftyOne(number-200)
+    } else if (number >= 251 & number < 291) {
+      romanNumeralString = "C" + romanNumeralString + romanNumeralLessThanNinetyOne(number-200)
+    } else if (number >= 291 & number < 300) {
+      romanNumeralString = "C" + romanNumeralString + romanNumeralLessThanOneHundredAndOne(number-200)
+    } else if (number === 300) {
+      romanNumeralString = "CCC";
+    }
+  return romanNumeralString;
+}
 
 // User-interface logic
 $(function() {
