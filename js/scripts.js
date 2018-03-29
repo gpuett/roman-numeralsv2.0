@@ -11,9 +11,11 @@ function romanNumeral(number) {
     return romanNumeralLessThanNinetyOne(number);
   } else if (number <= 100) {
     return romanNumeralLessThanOneHundredAndOne(number);
-  } else if (number <= 400) {
-    return romanNumeralLessThanFourHundredAndOne(number);
-  }
+  } else if (number <= 500) {
+    return romanNumeralLessThanFiveHundredAndOne(number);
+  } else if (number <= 900) {
+    return romanNumeralLessThanNineHundred(number);
+ }
   return romanNumeralString
 }
 
@@ -93,8 +95,8 @@ function romanNumeralLessThanOneHundredAndOne(number) {
   return romanNumeralString;
 }
 
-function romanNumeralLessThanFourHundredAndOne(number) {
-    var romanNumeralString = "C";
+function romanNumeralLessThanFiveHundredAndOne(number) {
+    var romanNumeralString = 'C';
     if (number > 100 && number < 110) {
       romanNumeralString += romanNumeralLessThanTen(number-100)
     } else if (number > 110 & number < 140) {
@@ -119,8 +121,94 @@ function romanNumeralLessThanFourHundredAndOne(number) {
       romanNumeralString = "C" + romanNumeralString + romanNumeralLessThanOneHundredAndOne(number-200)
     } else if (number === 300) {
       romanNumeralString = "CCC";
+    } else if (number > 300 && number < 310) {
+      romanNumeralString = "CC" + romanNumeralString + romanNumeralLessThanTen(number-300)
+    } else if (number > 310 & number < 340) {
+      romanNumeralString = "CC" + romanNumeralString + romanNumeralLessThanForty(number-300)
+    } else if (number >= 340 && number < 351) {
+      romanNumeralString = "CC" + romanNumeralString + romanNumeralLessThanFiftyOne(number-300)
+    } else if (number >= 351 & number < 391) {
+      romanNumeralString = "CC" + romanNumeralString + romanNumeralLessThanNinetyOne(number-300)
+    } else if (number >= 391 & number < 400) {
+      romanNumeralString = "CC" + romanNumeralString + romanNumeralLessThanOneHundredAndOne(number-300)
+    } else if (number === 400) {
+      romanNumeralString = "CD";
+    } else if (number > 400 && number < 410) {
+      romanNumeralString = "CD" + romanNumeralLessThanTen(number-400)
+    } else if (number >= 410 & number < 440) {
+      romanNumeralString = "CD" + romanNumeralLessThanForty(number-400)
+    } else if (number >= 440 && number < 451) {
+      romanNumeralString = "CD" + romanNumeralLessThanFiftyOne(number-400)
+    } else if (number >= 451 && number < 491) {
+      romanNumeralString = "CD" + romanNumeralLessThanNinetyOne(number-400)
+    } else if (number >= 491 && number < 500) {
+      romanNumeralString = "CD" + romanNumeralLessThanOneHundredAndOne(number-400)
+    } else if (number === 500) {
+      romanNumeralString = "D";
     }
   return romanNumeralString;
+}
+
+function romanNumeralLessThanNineHundred(number) {
+  var romanNumeralString = "D";
+  if (number > 500 && number < 510) {
+    romanNumeralString += romanNumeralLessThanTen(number-500)
+  } else if (number > 510 & number < 540) {
+    romanNumeralString += romanNumeralLessThanForty(number-500)
+  } else if (number >= 540 && number < 551) {
+    romanNumeralString += romanNumeralLessThanFiftyOne(number-500)
+  } else if (number >= 551 & number < 591) {
+    romanNumeralString += romanNumeralLessThanNinetyOne(number-500)
+  } else if (number >= 591 & number < 600) {
+    romanNumeralString += romanNumeralLessThanOneHundredAndOne(number-500)
+  } else if (number === 600) {
+    romanNumeralString += "DC";
+  } else if (number > 600 && number < 610) {
+    romanNumeralString = romanNumeralString + "C" +  romanNumeralLessThanTen(number-600)
+  } else if (number > 610 & number < 640) {
+    romanNumeralString = romanNumeralString + "C" + romanNumeralLessThanForty(number-600)
+  } else if (number >= 640 && number < 651) {
+    romanNumeralString = romanNumeralString + "C" + romanNumeralLessThanFiftyOne(number-600)
+  } else if (number >= 651 & number < 691) {
+    romanNumeralString = romanNumeralString + "C" + romanNumeralLessThanNinetyOne(number-600)
+  } else if (number >= 691 & number < 700) {
+    romanNumeralString = romanNumeralString + "C" + romanNumeralLessThanOneHundredAndOne(number-600)
+  } else if (number === 700) {
+    romanNumeralString = "DCC";
+  } else if (number > 700 && number < 710) {
+    romanNumeralString = romanNumeralString + "CC" + romanNumeralLessThanTen(number-700)
+  } else if (number > 710 & number < 740) {
+    romanNumeralString = romanNumeralString + "CC" + romanNumeralLessThanForty(number-700)
+  } else if (number >= 740 && number < 751) {
+    romanNumeralString = romanNumeralString + "CC" + romanNumeralLessThanFiftyOne(number-700)
+  } else if (number >= 751 & number < 791) {
+    romanNumeralString = romanNumeralString + "CC" + romanNumeralLessThanNinetyOne(number-700)
+  } else if (number >= 791 & number < 800) {
+    romanNumeralString = romanNumeralString + "CC" + romanNumeralLessThanOneHundredAndOne(number-700)
+  } else if (number === 800) {
+    romanNumeralString = "CD";
+  } else if (number > 800 && number < 810) {
+    romanNumeralString = romanNumeralString + "CCC" + romanNumeralLessThanTen(number-800)
+  } else if (number >= 810 & number < 840) {
+    romanNumeralString = romanNumeralString + "CCC" + romanNumeralLessThanForty(number-800)
+  } else if (number >= 840 && number < 851) {
+    romanNumeralString = romanNumeralString + "CCC" + romanNumeralLessThanFiftyOne(number-800)
+  } else if (number >= 851 && number < 891) {
+    romanNumeralString = romanNumeralString + "CCC" + romanNumeralLessThanNinetyOne(number-800)
+  } else if (number >= 891 && number < 900) {
+    romanNumeralString = romanNumeralString + "CCC" + romanNumeralLessThanOneHundredAndOne(number-800)
+  } else if (number === 900) {
+    romanNumeralString = "CM";
+  }
+return romanNumeralString;
+}
+
+
+function romanNumeralLessThanFiveHundredAndOne(number) {
+  var romanNumeralString = "CD";
+  if (number > 400 && number < 490) {
+
+  }
 }
 
 // User-interface logic
