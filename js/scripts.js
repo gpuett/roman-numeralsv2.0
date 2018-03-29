@@ -13,6 +13,12 @@ function romanNumeral(number) {
     romanNumeralString = "X";
   } else if (number === 50) {
     romanNumeralString = "L";
+  } else if (number === 100) {
+    romanNumeralString = "C";
+  } else if (number === 500) {
+    romanNumeralString = "D";
+  } else if (number === 1000) {
+    romanNumeralString = "M"; 
   }
   return romanNumeralString
 }
