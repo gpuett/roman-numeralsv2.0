@@ -5,6 +5,10 @@ function romanNumeral(number) {
     return romanNumeralLessThanTen(number);
   } else if (number < 40) {
     return romanNumeralLessThanForty(number);
+  } else if (number <= 50) {
+    return romanNumeralLessThanFiftyOne(number);
+  } else if (number <= 90) {
+    return romanNumeralLessThanNinetyOne(number);
   }
   return romanNumeralString
 }
@@ -27,7 +31,7 @@ function romanNumeralLessThanTen(number) {
   } else if (number === 9) {
     romanNumeralString = "IX"
   }
-  return romanNumeralString
+  return romanNumeralString;
 }
 
 function romanNumeralLessThanForty(number) {
@@ -36,7 +40,6 @@ function romanNumeralLessThanForty(number) {
     } else if (number > 10 && number < 20) {
     romanNumeralString = "X";
     romanNumeralString += romanNumeralLessThanTen(number-10)
-    console.log(romanNumeralString);
   } else if (number === 20) {
     romanNumeralString = "XX";
   } else if (number > 20 && number < 30) {
@@ -48,11 +51,33 @@ function romanNumeralLessThanForty(number) {
     romanNumeralString = "XXX";
     romanNumeralString += romanNumeralLessThanTen(number-30)
   }
-  return romanNumeralString
-
+  return romanNumeralString;
 }
-  // } else if (number === 50) {
-  //   romanNumeralString = "L";
+
+function romanNumeralLessThanFiftyOne(number) {
+  romanNumeralString = "XL";
+  if (number === 40) {
+    romanNumeralString;
+  } else if (number > 40 && number < 50) {
+    romanNumeralString += romanNumeralLessThanTen(number-40)
+  } else if (number === 50) {
+    romanNumeralString = "L";
+  }
+  return romanNumeralString;
+}
+
+function romanNumeralLessThanNinetyOne(number) {
+  romanNumeralString = "L"
+  if (number < 60) {
+    romanNumeralString += romanNumeralLessThanTen(number-50)
+  } else if (number > 60 && number < 90) {
+    romanNumeralString += romanNumeralLessThanForty(number-50)
+  } else if (number === 90) {
+    romanNumeralString = "XC";
+  }
+  return romanNumeralString;
+}
+
   // } else if (number === 100) {
   //   romanNumeralString = "C";
   // } else if (number === 500) {
